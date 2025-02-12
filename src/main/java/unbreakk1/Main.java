@@ -1,5 +1,7 @@
 package unbreakk1;
 
+import java.util.Optional;
+
 public class Main
 {
     public static void main(String[] args)
@@ -9,13 +11,16 @@ public class Main
         repository.addPerson(new Person(1, "Alice", DaysOfWeek.FRIDAY));
         repository.addPerson(new Person(2, "Bob", DaysOfWeek.MONDAY));
 
-        repository.findById(1).ifPresent(person -> System.out.println("Found: " + person));
+        int searchId = 1;
 
-        repository.findById(3).ifPresentOrElse(
-                person -> System.out.println("Found: " + person),
-                () -> System.out.println("Person not found")
-        );
+        Optional<Person> person = repository.findById(searchId);
+
+        if (person.isPresent())
+        {
+            System.out.println("Name: " + person.get().name());
+            System.out.println("Favorite Day: " + person.get().favoriteDay());
+        } else
+            System.out.println("Person with ID " + searchId + " not found.");
+
     }
-
-
 }
