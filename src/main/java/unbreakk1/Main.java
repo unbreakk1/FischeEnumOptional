@@ -13,12 +13,13 @@ public class Main
         weekday = DaysOfWeek.SATURDAY;
         System.out.println(DaysOfWeek.getDayType(weekday));
 
-
         PersonRepository repository = new PersonRepository();
 
         repository.addPerson(new Person(1, "Alice", DaysOfWeek.FRIDAY, Gender.FEMALE));
         repository.addPerson(new Person(2, "Bob", DaysOfWeek.MONDAY, Gender.MALE));
-        repository.addPerson(new Person(3, "Chris", DaysOfWeek.WEDNESDAY, Gender.DIVERSE));
+        repository.addPerson(new Person(3, "Gernhardt", DaysOfWeek.WEDNESDAY, Gender.DIVERSE));
+        repository.addPerson(new Person(4, "Diana", DaysOfWeek.TUESDAY, Gender.FEMALE));
+        repository.addPerson(new Person(5, "Eve", DaysOfWeek.THURSDAY, Gender.DIVERSE));
 
         int searchId = 1;
 
@@ -42,25 +43,8 @@ public class Main
             System.out.println(p);
         }
 
-        //clear list for Bonus Part
-        repository = new PersonRepository();
-
-
-
-
-
-
-
-
-
 
         //=================================BONUS DONT LOOK AAAAHHH=========================
-
-        repository.addPerson(new Person(1, "Alice", DaysOfWeek.FRIDAY, Gender.FEMALE));
-        repository.addPerson(new Person(2, "Bob", DaysOfWeek.MONDAY, Gender.MALE));
-        repository.addPerson(new Person(3, "Chris", DaysOfWeek.WEDNESDAY, Gender.DIVERSE));
-        repository.addPerson(new Person(4, "Diana", DaysOfWeek.TUESDAY, Gender.FEMALE));
-        repository.addPerson(new Person(5, "Eve", DaysOfWeek.THURSDAY, Gender.DIVERSE));
 
         repository.countByGender();
 
