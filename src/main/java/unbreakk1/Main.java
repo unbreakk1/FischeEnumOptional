@@ -4,8 +4,18 @@ public class Main
 {
     public static void main(String[] args)
     {
-        System.out.println(DaysOfWeek.getDayType(DaysOfWeek.MONDAY)); // Output: MONDAY
-        System.out.println(DaysOfWeek.getDayType(DaysOfWeek.SATURDAY)); // Output: Weekend
+        PersonRepository repository = new PersonRepository();
 
+        repository.addPerson(new Person(1, "Alice", DaysOfWeek.FRIDAY));
+        repository.addPerson(new Person(2, "Bob", DaysOfWeek.MONDAY));
+
+        repository.findById(1).ifPresent(person -> System.out.println("Found: " + person));
+
+        repository.findById(3).ifPresentOrElse(
+                person -> System.out.println("Found: " + person),
+                () -> System.out.println("Person not found")
+        );
     }
+
+
 }
