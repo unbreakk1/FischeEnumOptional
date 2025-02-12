@@ -4,7 +4,8 @@ public record Person(int id, String name, DaysOfWeek favoriteDay, Gender gender)
 
 {
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "Person [ID=" + id
                 + ", Name='" + name + "'"
                 + ", Favorite Day=" + favoriteDay

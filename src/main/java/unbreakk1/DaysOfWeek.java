@@ -10,7 +10,8 @@ public enum DaysOfWeek
     SATURDAY,
     SUNDAY;
 
-    public static String getDayType(DaysOfWeek day) {
+    public static String getDayType(DaysOfWeek day)
+    {
         return switch (day)
         {
             case SATURDAY, SUNDAY -> "Weekend";
