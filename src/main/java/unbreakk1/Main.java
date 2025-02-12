@@ -7,6 +7,13 @@ public class Main
 {
     public static void main(String[] args)
     {
+        DaysOfWeek weekday = DaysOfWeek.FRIDAY;
+        System.out.println(DaysOfWeek.getDayType(weekday));
+
+        weekday = DaysOfWeek.SATURDAY;
+        System.out.println(DaysOfWeek.getDayType(weekday));
+
+
         PersonRepository repository = new PersonRepository();
 
         repository.addPerson(new Person(1, "Alice", DaysOfWeek.FRIDAY, Gender.FEMALE));
